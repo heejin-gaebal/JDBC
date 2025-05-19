@@ -25,9 +25,10 @@ public class Main2 {
 		
 		//sql
 		String sql = "INSERT INTO STUDENT(NAME) VALUES(?)"; // 컬럼값이 바뀌는 컬럼은 ?로 표현
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, str);
-		int result = pstmt.executeUpdate(); //execute는 boolean타입이므로 int형으로 나오게 타입변환
+		PreparedStatement pstmt = conn.prepareStatement(sql); // 실행하고싶은 sql 구문을 담는 Statement 공간을 만들어줌
+		pstmt.setString(1, str); //1번째 ?에 값을 넣어준다
+		int result = pstmt.executeUpdate(); 
+		//execute는 boolean타입이므로 int형으로 나오게 타입변환 : 실행결과를 이클립스에 구현하기 위함
 		System.out.println("실행결과 : " + result);
 	}
 
